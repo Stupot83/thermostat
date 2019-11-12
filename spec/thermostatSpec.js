@@ -136,6 +136,88 @@
       });
     });
 
+    describe('max_temp_psm_off initialisation', () => {
+      it('has an attribute of max_temp_psm_off', () => {
+        expect(typeof thermostat.max_temp_psm_off).toEqual("number");
+      });
+
+      it('is 32 when initialised', () => {
+        expect(thermostat.max_temp_psm_off).toEqual(32);
+      });
+    });
+
+    describe('max_temp_psm_on initialisation', () => {
+      it('has an attribute of max_temp_psm_on', () => {
+        expect(typeof thermostat.max_temp_psm_on).toEqual("number");
+      });
+
+      it('is 25 when initialised', () => {
+        expect(thermostat.max_temp_psm_on).toEqual(25);
+      });
+    });
+
+    describe('isMaxTemp function', () => {
+      it('responds to isMaxTemp', () => {
+        expect(typeof thermostat.isMaxTemp).toEqual("boolean");
+      });
+
+      it('returns true when temp is 25 and psm is on', () => {
+        thermostat.turnPsmOn();
+        thermostat.temperature = 25;
+        expect(thermostat.isMaxTemp).toEqual(true);
+      });
+
+      it('returns false when temp is more than 25 and psm is on', () => {
+        thermostat.turnPsmOn();
+        thermostat.temperature = 26;
+        expect(thermostat.isMaxTemp).toEqual(false);
+      });
+
+      it('returns false when temp is less than 25 and psm is on', () => {
+        thermostat.turnPsmOn();
+        thermostat.temperature = 5;
+        expect(thermostat.isMaxTemp).toEqual(false);
+      });
+
+      it('returns true when temp is 32 and psm is off', () => {
+        thermostat.turnPsmOff();
+        thermostat.temperature = 32;
+        expect(thermostat.isMaxTemp).toEqual(true);
+      });
+
+      it('returns false when temp is more than 32 and psm is off', () => {
+        thermostat.turnPsmOff();
+        thermostat.temperature = 45;
+        expect(thermostat.isMaxTemp).toEqual(false);
+      });
+
+      it('returns false when temp is less than 32 and psm is off', () => {
+        thermostat.turnPsmOff();
+        thermostat.temperature = 5;
+        expect(thermostat.isMaxTemp).toEqual(false);
+      });
+    });
+
+
+    describe('when power saving mode is on', () => {
+      it('has a maximum temperature of 25 degrees', () => {
+        for (var i = 0; i < 6; i++) {
+          thermostat.tempUp();
+        }
+        expect(thermostat.currentTemperature).toEqual(25);
+      });
+    });
+
+    describe('when power saving mode is off', function() {
+      it('has a maximum temperature of 32 degrees', function() {
+        thermostat.turnPsmOff();
+        for (var i = 0; i < 13; i++) {
+          thermostat.tempUp();
+        }
+        expect(thermostat.currentTemperature).toEqual(32);
+      });
+    });
+
   });
   
 }());
