@@ -28,7 +28,7 @@
     });
 
     describe('current temperature function', () => {
-      it('is responds to currentTemperature', () => {
+      it('responds to currentTemperature', () => {
         expect(typeof thermostat.currentTemperature).toEqual("number");
       });
 
@@ -38,7 +38,7 @@
     });
 
     describe('temperature up function', () => {
-      it('is responds to tempUp', () => {
+      it('responds to tempUp', () => {
         expect(typeof thermostat.tempUp).toEqual("function");
       });
 
@@ -49,13 +49,34 @@
     });
 
     describe('temperature down function', () => {
-      it('is responds to tempDown', () => {
+      it('responds to tempDown', () => {
         expect(typeof thermostat.tempDown).toEqual("function");
       });
 
       it('returns the current temperature when first initialised', () => {
         thermostat.tempDown();
         expect(thermostat.currentTemperature).toEqual(19);
+      });
+    });
+
+    describe('minimum temperature initialisation', () => {
+      it('has an attribute of minimum_temp', () => {
+        expect(typeof thermostat.minimum_temp).toEqual("number");
+      });
+
+      it('initialises with a minimum_temp of 10 degrees', () => {
+        expect(thermostat.minimum_temp).toEqual(10);
+      });
+    });
+
+    describe('minimum temperature function', () => {
+      it('responds to isMinimumTemp', () => {
+        expect(typeof thermostat.isMinimumTemp).toEqual("boolean");
+      });
+
+      it('initialises with a minimum_temp of 10 degrees', () => {
+        thermostat.temperature = 10;
+        expect(thermostat.isMinimumTemp).toEqual(true);
       });
     });
 

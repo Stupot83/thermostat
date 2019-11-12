@@ -1,10 +1,15 @@
 class Thermostat {
   constructor() {
     this.temperature = 20;
+    this.minimum_temp = 10;
   }
 
   get currentTemperature() {
     return this.temperature;
+  }
+
+  get isMinimumTemp() {
+    return this.temperature === this.minimum_temp;
   }
 
   tempUp() {
