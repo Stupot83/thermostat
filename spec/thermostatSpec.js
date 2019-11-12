@@ -38,13 +38,24 @@
     });
 
     describe('temperature up function', () => {
-      it('is responds to increaseTemp', () => {
+      it('is responds to tempUp', () => {
         expect(typeof thermostat.tempUp).toEqual("function");
       });
 
       it('returns the current temperature when first initialised', () => {
         thermostat.tempUp();
         expect(thermostat.currentTemperature).toEqual(21);
+      });
+    });
+
+    describe('temperature down function', () => {
+      it('is responds to tempDown', () => {
+        expect(typeof thermostat.tempDown).toEqual("function");
+      });
+
+      it('returns the current temperature when first initialised', () => {
+        thermostat.tempDown();
+        expect(thermostat.currentTemperature).toEqual(19);
       });
     });
 
