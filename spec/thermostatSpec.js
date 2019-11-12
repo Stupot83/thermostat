@@ -87,6 +87,26 @@
       });
     });
 
+    describe('power saving mode', () => {
+      it('has an attribute of psm', () => {
+        expect(typeof thermostat.psm).toEqual("boolean");
+      });
+
+      it('has power saving mode set to on by default', () => {
+        expect(thermostat.psm).toEqual(true);
+      });
+    });
+
+    describe('isPsmOn function', () => {
+      it('responds to isPsmOn', () => {
+        expect(typeof thermostat.isPsmOn).toEqual("boolean");
+      });
+
+      it('returns true when initialised', () => {
+        expect(thermostat.isPsmOn).toEqual(true);
+      });
+    });
+
   });
   
 }());
