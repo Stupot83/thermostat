@@ -16,7 +16,7 @@ A project to build a javascript powered thermostat web application.
 
 - [ ] You can decrease the temperature with a down function
 
-- [ ]The minimum temperature is 10 degrees
+- [ ] The minimum temperature is 10 degrees
 
 - [ ] If power saving mode is on, the maximum temperature is 25 degrees
 
@@ -26,6 +26,6 @@ A project to build a javascript powered thermostat web application.
 
 - [ ] You can reset the temperature to 20 with a reset function
 
-- [ ] You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25 is medium-usage, anything else is high-usage.
+- [ ] You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25 is       medium-usage, anything else is high-usage.
 
-- [ ] To know how to set your thermostat, you can enter your location to receive the current outside temperature
+- [ ] To know how to set your thermostat, you can enter your location to receive the            current outside temperature
