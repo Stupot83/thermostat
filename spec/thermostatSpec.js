@@ -107,6 +107,35 @@
       });
     });
 
+    describe('turnPsmOff function', () => {
+      it('responds to turnPsmOff', () => {
+        expect(typeof thermostat.turnPsmOff).toEqual("function");
+      });
+
+      it('sets psm to false', () => {
+        thermostat.turnPsmOff();
+        expect(thermostat.psm).toEqual(false);
+      });
+
+      it('can switch psm off', () => {
+        thermostat.turnPsmOff();
+        expect(thermostat.isPsmOn).toBe(false);
+      });
+    });
+
+    describe('turnPsmOn function', () => {
+      it('responds to turnPsmOn', () => {
+        expect(typeof thermostat.turnPsmOn).toEqual("function");
+      });
+
+      it('sets psm to true', () => {
+        thermostat.turnPsmOff();
+        expect(thermostat.isPsmOn).toBe(false);
+        thermostat.turnPsmOn();
+        expect(thermostat.isPsmOn).toEqual(true);
+      });
+    });
+
   });
   
 }());

@@ -17,8 +17,12 @@ class Thermostat {
     return this.psm === true;
   }
 
-  get turnOffPsm() {
-    return this.psm === false;
+  turnPsmOff() {
+    this.psm = false;
+  }
+
+  turnPsmOn() {
+    this.psm = true;
   }
 
   tempUp() {
