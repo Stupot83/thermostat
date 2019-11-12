@@ -78,6 +78,13 @@
         thermostat.temperature = 10;
         expect(thermostat.isMinimumTemp).toEqual(true);
       });
+
+      it('has a minimum of 10 degrees', () => {
+        for (let i = 0; i < 11; i++) {
+          thermostat.tempDown();
+        }
+        expect(thermostat.currentTemperature).toEqual(10);
+      });
     });
 
   });
