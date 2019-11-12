@@ -6,6 +6,7 @@ class Thermostat {
     this.psm = true;
     this.max_temp_psm_off = 32;
     this.max_temp_psm_on = 25;
+    this.med_energy_usage_limit = 18;
   }
 
   get currentTemperature() {
@@ -51,5 +52,15 @@ class Thermostat {
       return;
     }
     return (this.temperature -= 1);
+  }
+
+  energyUsage() {
+    if (this.temperature < this.med_energy_usage_limit) {
+      return 'low-usage';
+    }
+    if (this.temperature >= this.med_energy_usage_limit && this.temperature <= this.max_temp_psm_on) {
+      return 'medium-usage';
+    }
+    return 'high-usage';
   }
 }

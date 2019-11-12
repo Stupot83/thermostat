@@ -234,5 +234,41 @@
         expect(thermostat.currentTemperature).toEqual(20);
       });
     });
+
+    describe('displaying usage levels', () => {
+      it("has an energyUsage function", () => {
+        expect(typeof thermostat.energyUsage).toEqual("function");
+      });
+
+      it('it defaults as medium-usage', () => {
+        expect(thermostat.energyUsage()).toEqual('medium-usage');
+      });
+
+      describe('when the temperature is between 18 and 25 degrees', () => {
+        it('it is considered medium-usage', () => {
+          expect(thermostat.energyUsage()).toEqual('medium-usage');
+        });
+      });
+
+      describe('when the temperature is below 18 degrees', () => {
+        it('it is considered low-usage', () => {
+          for (var i = 0; i < 3; i++) {
+            thermostat.tempDown();
+          }
+          expect(thermostat.energyUsage()).toEqual('low-usage');
+        });
+      });
+    
+      describe('when the temperature is anything else', () => {
+        it('it is considered high-usage', () => {
+          thermostat.psm = false;
+          for (var i = 0; i < 6; i++) {
+            thermostat.tempUp();
+          }
+          expect(thermostat.energyUsage()).toEqual('high-usage');
+        });
+      });
+    });
+    
   });
 })();
