@@ -1,28 +1,53 @@
 (function () {
   'use strict';
 
-  describe('Thermostat initialisation', () => {
+  describe('Thermostat', () => {
+
     let thermostat;
 
     beforeEach(() => {
       thermostat = new Thermostat();
     });
 
-    it('instantiates the Thermostat class successfully', () => {
-      expect(thermostat).toBeInstanceOf(Thermostat);
+    describe('Thermostat initialisation', () => {
+      it('instantiates the Thermostat class successfully', () => {
+        expect(thermostat).toBeInstanceOf(Thermostat);
+      });
+
+      it('is an object when created', () => {
+        expect(typeof thermostat).toEqual("object");
+      });
+
+      it('responds to the attribute of temperature', () => {
+        expect(typeof thermostat.temperature).toEqual("number");
+      });
+
+      it('initialises with a temperature of 20 degrees', () => {
+        expect(thermostat.temperature).toEqual(20);
+      });
     });
 
-    it('is an object when created', () => {
-      expect(typeof thermostat).toEqual("object");
+    describe('current temperature function', () => {
+      it('is responds to currentTemperature', () => {
+        expect(typeof thermostat.currentTemperature).toEqual("number");
+      });
+
+      it('returns the current temperature when first initialised', () => {
+        expect(thermostat.currentTemperature).toEqual(20);
+      });
     });
 
-    it('responds to the attribute of temperature', () => {
-      expect(typeof thermostat.temperature).toEqual("number");
+    describe('temperature up function', () => {
+      it('is responds to increaseTemp', () => {
+        expect(typeof thermostat.tempUp).toEqual("function");
+      });
+
+      it('returns the current temperature when first initialised', () => {
+        thermostat.tempUp();
+        expect(thermostat.currentTemperature).toEqual(21);
+      });
     });
 
-    it('initialises with a temperature of 20 degrees', () => {
-      expect(thermostat.temperature).toEqual(20);
-    });
   });
   
 }());
