@@ -1,6 +1,7 @@
 class Thermostat {
   constructor() {
-    this.temperature = 20;
+    this.default_temp = 20;
+    this.temperature = this.default_temp;
     this.minimum_temp = 10;
     this.psm = true;
     this.max_temp_psm_off = 32;
@@ -26,6 +27,10 @@ class Thermostat {
     return this.temperature === this.max_temp_psm_on;
   }
 
+  resetTemp() {
+    this.temperature = this.default_temp;
+  }
+
   turnPsmOff() {
     this.psm = false;
   }
@@ -38,13 +43,13 @@ class Thermostat {
     if (this.isMaxTemp) {
       return;
     }
-    return this.temperature += 1;
+    return (this.temperature += 1);
   }
 
   tempDown() {
     if (this.isMinimumTemp) {
       return;
     }
-    return this.temperature -= 1;
+    return (this.temperature -= 1);
   }
 }
