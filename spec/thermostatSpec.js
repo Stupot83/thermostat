@@ -241,12 +241,12 @@
       });
 
       it('it defaults as medium-usage', () => {
-        expect(thermostat.energyUsage()).toEqual('medium-usage');
+        expect(thermostat.energyUsage()).toEqual('Medium');
       });
 
       describe('when the temperature is between 18 and 25 degrees', () => {
         it('it is considered medium-usage', () => {
-          expect(thermostat.energyUsage()).toEqual('medium-usage');
+          expect(thermostat.energyUsage()).toEqual('Medium');
         });
       });
 
@@ -255,7 +255,7 @@
           for (var i = 0; i < 3; i++) {
             thermostat.tempDown();
           }
-          expect(thermostat.energyUsage()).toEqual('low-usage');
+          expect(thermostat.energyUsage()).toEqual('Low');
         });
       });
     
@@ -265,7 +265,7 @@
           for (var i = 0; i < 6; i++) {
             thermostat.tempUp();
           }
-          expect(thermostat.energyUsage()).toEqual('high-usage');
+          expect(thermostat.energyUsage()).toEqual('High');
         });
       });
     });

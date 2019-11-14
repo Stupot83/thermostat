@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Thermostat app">
+
+  <title>Thermostat</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+  <link rel="stylesheet" href="thermostat.css">
+</head>
+
+<body>
+  <div class="d-flex justify-content-center" id="main-wrapper">
+
+    <div id="thermostat-wrapper" class="text-center">
+      <div class="pb-3 pt-3 mb-0 justify-content-center">
+        <h1 class="pt-3 pb-3 mb-0 title">Thermostat 🔥</h1>
+        <h1 class="pb-5 pb-5 mb-0"><span id="temperature"></span>&deg;C</h1>
+      </div>
+      <div class="p-5 d-flex justify-content-center" id="progress-div">
+        <progress class="mr-2" id="progress-bar" value="20" max="32"></progress>
+        <span class="usage-text medium-usage" id="usage-indicator">Medium</span>
+      </div>
+      <div class="pb-5 pt-5 row">
+        <div class="col-xl-5 pt-3 pb-3" id="thermostat-controls">
+          <h3 class="mb-0 pb-3">Temp Controls</h3>
+          <button class="btn" id="temp-up" type="button"><strong>+</strong></button>
+          <button class="btn" id="temp-down" type="button"><strong>-</strong></button>
+          <button class="btn" id="temp-reset" type="button">Reset</button>
+        </div>
+        <div class="offset-xl-2 col-xl-5 pt-3 pb-3" id="power-saving-controls">
+            <h3 class="mb-0 pb-3">Power Saving is: <span id="power-saving"></span></h3>
+            <button class="btn" id="psm-on" type="button">On</button>
+            <button class="btn" id="psm-off" type="button">Off</button>
+        </div>
+      </div>
+      <div class="" id="city-selector">
+          <form id="enter-city" class="form-inline text-center pt-3 pb-3 justify-content-center" action="index.html" method="post">
+            <h5 class="form-group">Select local UK city: </h5>
+              <div class="ml-3 form-group">
+                <input class="input-field" id="user-location" type="text" name="user-location" value="Location">
+              </div>
+              <div class="ml-3 form-group">
+                <button class="btn" type="submit" name="submit-location" id="submit-location">Enter</button>
+              </div>
+            </form>
+            <div>
+              <h3 class="pt-3 pb-3 mb-0 hidden"><span id="local-temp"></span>&deg;C</h3>
+            </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+
+  <script src="/interface.js"></script>
+  <script src="/thermostat.js"></script>
+</body>
+
+</html>
