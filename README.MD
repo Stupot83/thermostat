@@ -32,8 +32,8 @@ A project to build a javascript powered thermostat web application.
 
 ![Screenshot1](https://i.ibb.co/p0N3Tch/Screenshot-2019-11-14-at-10-36-20.png)
 
-![Screenshot2](https://ibb.co/5hk7g0x/Screenshot-2019-11-14-at-10-36-35.png)
+![Screenshot2](https://i.ibb.co/m50xVjF/Screenshot-2019-11-14-at-10-36-35.png)
 
-![Screenshot3](https://ibb.co/fdtLwZn/Screenshot-2019-11-14-at-10-36-52.png)
+![Screenshot3](https://i.ibb.co/Sw0GCHd/Screenshot-2019-11-14-at-10-36-52.png)
 
-![Screenshot4](https://ibb.co/LPsx8LL/Screenshot-2019-11-14-at-10-37-04.png)
+![Screenshot4](https://i.ibb.co/wL2SR99/Screenshot-2019-11-14-at-10-37-04.png)
