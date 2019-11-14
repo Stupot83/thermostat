@@ -30,10 +30,10 @@ A project to build a javascript powered thermostat web application.
 
 - [x] To know how to set your thermostat, you can enter your location to receive the            current outside temperature
 
-![Screenshot1](https://ibb.co/NVfLq5T)
+![Screenshot1](https://ibb.co/NVfLq5T/Screenshot-2019-11-14-at-10-36-20.png)
 
-![Screenshot2](https://ibb.co/5hk7g0x)
+![Screenshot2](https://ibb.co/5hk7g0x/Screenshot-2019-11-14-at-10-36-35.png)
 
-![Screenshot3](https://ibb.co/fdtLwZn)
+![Screenshot3](https://ibb.co/fdtLwZn/Screenshot-2019-11-14-at-10-36-52.png)
 
-![Screenshot4](https://ibb.co/LPsx8LL)
+![Screenshot4](https://ibb.co/LPsx8LL/Screenshot-2019-11-14-at-10-37-04.png)
